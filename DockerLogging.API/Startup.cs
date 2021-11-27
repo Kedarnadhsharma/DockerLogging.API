@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,16 @@ namespace DockerLogging.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var ConnectionString = Configuration.GetConnectionString("Db");
+            var simpleProrperty = Configuration.GetValue<string>("SimpleProperty");
+            var NestedProperty = Configuration.GetValue<string>("Inventory:NestedProperty");
+
+            Log.ForContext("ConnectionString", ConnectionString)
+               .ForContext("SimpleProperty", simpleProrperty)
+               .ForContext("NestedProperty", NestedProperty)
+               .Information("Loaded Configuration", ConnectionString);
+
+            
             services.AddScoped<IProductLogic, ProductLogic>();
             services.AddScoped<IQuickOrderLogic, QuickOrderLogic>();
 
