@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>c1637df2-a85e-4e20-9ebd-805bc7487268</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <AssemblyName>DockerLoggingAPI</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
