@@ -14,7 +14,9 @@
   ![image](https://user-images.githubusercontent.com/50028950/143679347-a9d13c56-efd0-4285-888e-9bdb4d8c5ce5.png)
   ![image](https://user-images.githubusercontent.com/50028950/143679355-175eb0af-dd5b-4830-b097-8a818cfbb679.png)
  
- The advantage with SeriLog is we can customize/enrich the content as we need and also use the option of writing the logs to other desitnations as well like cloud provider storage (AWS Cloud Watch/Azure Table Storage/Seq). Here we are using Seq as the other desitnation.
+ The advantage with SeriLog is we can customize/enrich the content as we need and also use the option of writing the logs to other destinations as well like cloud provider storage (AWS Cloud Watch/Azure Table Storage/Seq). Here we are using Seq as the other desitnation. 
+ 
+ For more details related to Seq refer to the link https://docs.datalust.co/docs
   
  Now if we assume this API to be running in a Docker Container, then writing the logs outside of the container makes more sense as the logs will be available even after the container is lost or exited because of errors. Writing logs outside of the containers and also to additional destinations with different cloud providers will provide insights to the applications. 
 
